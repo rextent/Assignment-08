@@ -7,7 +7,7 @@
     "rating": 4.8,
     "level": "Beginner",
     "description": "Learn full-stack web development from scratch using modern tools and frameworks.",
-    "image": "https://i.postimg.cc/43z9Vf6Y/web-dev.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Development"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.9,
     "level": "Advanced",
     "description": "Build scalable web apps using React, Next.js, and modern frontend architecture.",
-    "image": "https://i.postimg.cc/0yKX5p1Y/react.jpg",
+    "image": "https://images.unsplash.com/photo-1670057037226-b3d65909424f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Development"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.7,
     "level": "Beginner",
     "description": "Master design principles, wireframing, and user experience fundamentals.",
-    "image": "https://i.postimg.cc/mkQ2z6dC/uiux.jpg",
+    "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Design"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.6,
     "level": "Intermediate",
     "description": "Learn SEO, social media marketing, and paid advertising strategies.",
-    "image": "https://i.postimg.cc/8C0RZ7cH/marketing.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1684225764999-3597a8da10ab?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Marketing"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "Analyze data, build models, and visualize insights using Python.",
-    "image": "https://i.postimg.cc/vZ9P7H1h/data.jpg",
+    "image": "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Data Science"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.5,
     "level": "Beginner",
     "description": "Create stunning visuals using Photoshop, Illustrator, and design theory.",
-    "image": "https://i.postimg.cc/2y1nK3Q8/design.jpg",
+    "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Design"
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.8,
     "level": "Advanced",
     "description": "Build real-world applications using MongoDB, Express, React, and Node.js.",
-    "image": "https://i.postimg.cc/7Yg9h3pL/mern.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1720287601300-cf423c3d6760?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Development"
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.4,
     "level": "Beginner",
     "description": "Start your freelancing journey and earn online with proven strategies.",
-    "image": "https://i.postimg.cc/85kL5Z9M/freelance.jpg",
+    "image": "https://plus.unsplash.com/premium_photo-1661422064703-e3c75d7b2291?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Business"
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.7,
     "level": "Intermediate",
     "description": "Design modern mobile apps with Figma, prototyping, and UI systems.",
-    "image": "https://i.postimg.cc/qR2J2v3V/figma.jpg",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Design"
   }
 ]
