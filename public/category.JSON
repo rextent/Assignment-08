@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Development",
+    "icon": "💻",
+    "description": "Learn web and software development with modern technologies."
+  },
+  {
+    "id": 2,
+    "name": "Design",
+    "icon": "🎨",
+    "description": "Master UI/UX, graphic design, and creative skills."
+  },
+  {
+    "id": 3,
+    "name": "Marketing",
+    "icon": "📈",
+    "description": "Grow your business with digital marketing strategies."
+  },
+  {
+    "id": 4,
+    "name": "Data Science",
+    "icon": "📊",
+    "description": "Analyze data and build intelligent models."
+  },
+  {
+    "id": 5,
+    "name": "Business",
+    "icon": "💼",
+    "description": "Learn entrepreneurship and online earning strategies."
+  }
+]

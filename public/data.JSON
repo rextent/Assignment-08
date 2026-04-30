@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch using modern tools and frameworks.",
+    "image": "https://i.postimg.cc/43z9Vf6Y/web-dev.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced React & Next.js Mastery",
+    "instructor": "Sarah Johnson",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Advanced",
+    "description": "Build scalable web apps using React, Next.js, and modern frontend architecture.",
+    "image": "https://i.postimg.cc/0yKX5p1Y/react.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Michael Smith",
+    "duration": "12 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Master design principles, wireframing, and user experience fundamentals.",
+    "image": "https://i.postimg.cc/mkQ2z6dC/uiux.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "title": "Digital Marketing Masterclass",
+    "instructor": "Emily Davis",
+    "duration": "15 hours",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "description": "Learn SEO, social media marketing, and paid advertising strategies.",
+    "image": "https://i.postimg.cc/8C0RZ7cH/marketing.jpg",
+    "category": "Marketing"
+  },
+  {
+    "id": 5,
+    "title": "Data Science with Python",
+    "instructor": "David Wilson",
+    "duration": "22 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Analyze data, build models, and visualize insights using Python.",
+    "image": "https://i.postimg.cc/vZ9P7H1h/data.jpg",
+    "category": "Data Science"
+  },
+  {
+    "id": 6,
+    "title": "Graphic Design Essentials",
+    "instructor": "Sophia Brown",
+    "duration": "10 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Create stunning visuals using Photoshop, Illustrator, and design theory.",
+    "image": "https://i.postimg.cc/2y1nK3Q8/design.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 7,
+    "title": "Full-Stack MERN Project Course",
+    "instructor": "James Anderson",
+    "duration": "25 hours",
+    "rating": 4.8,
+    "level": "Advanced",
+    "description": "Build real-world applications using MongoDB, Express, React, and Node.js.",
+    "image": "https://i.postimg.cc/7Yg9h3pL/mern.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 8,
+    "title": "Freelancing & Online Earning Guide",
+    "instructor": "Daniel Lee",
+    "duration": "8 hours",
+    "rating": 4.4,
+    "level": "Beginner",
+    "description": "Start your freelancing journey and earn online with proven strategies.",
+    "image": "https://i.postimg.cc/85kL5Z9M/freelance.jpg",
+    "category": "Business"
+  },
+  {
+    "id": 9,
+    "title": "Mobile App Design with Figma",
+    "instructor": "Olivia Martinez",
+    "duration": "14 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Design modern mobile apps with Figma, prototyping, and UI systems.",
+    "image": "https://i.postimg.cc/qR2J2v3V/figma.jpg",
+    "category": "Design"
+  }
+]
