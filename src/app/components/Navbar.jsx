@@ -57,9 +57,19 @@ const Navbar = () => {
             <li className="hover:text-blue-600 cursor-pointer"><Link>My Profile</Link></li>
           </ul>
 
-          <Button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
-            Login
-          </Button>
+          <div>
+            <Link>
+              <Button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                Register
+              </Button>
+            </Link>
+            <Link>
+              <Button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                Register
+              </Button>
+            </Link>
+            
+          </div>
 
         </div>
       )}
