@@ -1,93 +1,74 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { FaUser, FaEnvelope, FaImage, FaLock } from "react-icons/fa";
+import Link from 'next/link';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 
-export default function RegisterPage() {
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        photo: "",
-        password: "",
-    });
+const RegisterPage = () => {
 
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const handleLogin = (data) => {
+        console.log(data);
     };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // 👉 এখানে তুমি API/Firebase call করতে পারো
-        console.log(form);
-        alert("Registered successfully!");
-    };
+    console.log(errors, 'Errors')
 
     return (
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-white to-purple-50 px-4">
             <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
 
-                {/* Title */}
                 <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-                    Create Your Account
+                    Register Your Account
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit(handleLogin)}>
 
                     {/* Name */}
                     <div className="flex items-center border rounded-md px-3 py-2">
-                        <FaUser className="text-gray-400 mr-2" />
                         <input
                             type="text"
-                            name="name"
                             placeholder="Full Name"
-                            required
-                            value={form.name}
-                            onChange={handleChange}
                             className="w-full outline-none text-sm"
+                            {...register("name", { required: "Name Can't empty" })}
                         />
                     </div>
+                    {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
 
                     {/* Email */}
                     <div className="flex items-center border rounded-md px-3 py-2">
-                        <FaEnvelope className="text-gray-400 mr-2" />
                         <input
                             type="email"
-                            name="email"
                             placeholder="Email Address"
-                            required
-                            value={form.email}
-                            onChange={handleChange}
                             className="w-full outline-none text-sm"
+                            {...register("email", { required: "Email Can't empty" })}
                         />
                     </div>
+                    {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
 
                     {/* Photo URL */}
                     <div className="flex items-center border rounded-md px-3 py-2">
-                        <FaImage className="text-gray-400 mr-2" />
                         <input
                             type="text"
-                            name="photo"
-                            placeholder="Photo URL"
-                            required
-                            value={form.photo}
-                            onChange={handleChange}
+                            placeholder="Enter your Photo URL"
                             className="w-full outline-none text-sm"
+                            {...register("photo", { required: "Photo URL Can't empty" })}
                         />
+
                     </div>
+                    {errors.photo && <p className='text-red-500'>{errors.photo.message}</p>}
 
                     {/* Password */}
                     <div className="flex items-center border rounded-md px-3 py-2">
-                        <FaLock className="text-gray-400 mr-2" />
                         <input
                             type="password"
-                            name="password"
                             placeholder="Password"
-                            required
-                            value={form.password}
-                            onChange={handleChange}
                             className="w-full outline-none text-sm"
+                            {...register("password", { required: "Password Can't Empty" })}
                         />
+
                     </div>
+                    {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
 
                     {/* Button */}
                     <button
@@ -99,15 +80,17 @@ export default function RegisterPage() {
 
                 </form>
 
-                {/* Footer */}
-                <p className="text-xs text-center text-gray-500 mt-4">
+                {/* Extra */}
+                <p className="text-center text-sm text-gray-600 mt-4">
                     Already have an account?{" "}
                     <a href="/login" className="text-blue-600 hover:underline">
-                        Login
+                        Login Now
                     </a>
                 </p>
 
             </div>
         </section>
     );
-}
+};
+
+export default RegisterPage;

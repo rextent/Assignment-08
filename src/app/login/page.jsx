@@ -1,8 +1,20 @@
+'use client'
+
+
 import Link from 'next/link';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 const LoginPage = () => {
+
+    const {register, handleSubmit, formState:{errors}} = useForm();
+
+    const handleLogin = (data) => {
+        console.log(data);    
+    };
+    console.log(errors, 'Errors')
+
     return (
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-white to-purple-50 px-4">
             <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
@@ -11,7 +23,7 @@ const LoginPage = () => {
                     Login to Your Account
                 </h2>
 
-                <div className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit(handleLogin)}>
 
                     {/* Email */}
                     <div className="flex items-center border rounded-md px-3 py-2">
@@ -19,8 +31,11 @@ const LoginPage = () => {
                             type="email"
                             placeholder="Email Address"
                             className="w-full outline-none text-sm"
+                            {...register("email", {required: "Email Can't empty"})}
                         />
+                        
                     </div>
+                    {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
 
                     {/* Password */}
                     <div className="flex items-center border rounded-md px-3 py-2">
@@ -28,17 +43,21 @@ const LoginPage = () => {
                             type="password"
                             placeholder="Password"
                             className="w-full outline-none text-sm"
+                            {...register("password", {required:"Password Can't Empty"})}
                         />
+                        
                     </div>
+                    {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
 
                     {/* Button */}
                     <button
+                        type="submit"
                         className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm font-medium transition"
                     >
                         Login
                     </button>
 
-                </div>
+                </form>
 
                 {/* Extra */}
                 <p className="text-center text-sm text-gray-600 mt-4">
