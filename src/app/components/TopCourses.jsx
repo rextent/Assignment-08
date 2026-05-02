@@ -6,9 +6,9 @@ const TopCourses = async () => {
     const topCourses = courses.slice(0,3)
     // console.log(topCourses)
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto my-5">
             <h2 className="text-2xl font-bold my-5">Top Courses</h2>
-            <div>
+            <div className="grid grid-cols-3 gap-4">
                 {
                     topCourses.map(course => <CourseCard key={course.id} course={course} ></CourseCard>)
                 }
