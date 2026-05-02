@@ -1,5 +1,6 @@
 import { Card } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaStar, FaClock, FaLayerGroup } from "react-icons/fa";
 
 const CourseCard = ({ course }) => {
@@ -55,9 +56,15 @@ const CourseCard = ({ course }) => {
           </div>
 
           {/* Button */}
-          <button className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition">
-            Details
-          </button>
+          {
+            course?.id && (
+              <Link href={`/all-courses/${course.id}`}>
+                <button className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition">
+                  Details
+                </button>
+              </Link>
+            )
+          }
 
         </div>
 
