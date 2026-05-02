@@ -1,7 +1,7 @@
 const LearningTips = () => {
   return (
     <section className="w-full py-16 bg-gray-50">
-      <div className="container mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8">
