@@ -1,6 +1,7 @@
 'use client'
 
 
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -8,12 +9,18 @@ import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 const LoginPage = () => {
 
-    const {register, handleSubmit, formState:{errors}} = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const handleLogin = (data) => {
-        console.log(data);    
+    const handleLogin = async (data) => {
+        console.log(data);
+        const { data: res, error } = await authClient.signIn.email({
+            email: data.email, // required
+            password: data.password, // required
+            rememberMe: true,
+            callbackURL: "/",
+        });
+
     };
-    console.log(errors, 'Errors')
 
     return (
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-white to-purple-50 px-4">
@@ -31,9 +38,9 @@ const LoginPage = () => {
                             type="email"
                             placeholder="Email Address"
                             className="w-full outline-none text-sm"
-                            {...register("email", {required: "Email Can't empty"})}
+                            {...register("email", { required: "Email Can't empty" })}
                         />
-                        
+
                     </div>
                     {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
 
@@ -43,9 +50,9 @@ const LoginPage = () => {
                             type="password"
                             placeholder="Password"
                             className="w-full outline-none text-sm"
-                            {...register("password", {required:"Password Can't Empty"})}
+                            {...register("password", { required: "Password Can't Empty" })}
                         />
-                        
+
                     </div>
                     {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
 

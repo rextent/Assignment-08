@@ -20,7 +20,13 @@ const RegisterPage = () => {
             image: photo,
             callbackURL: "/",
         });
-        console.log(data, error)
+        console.log(data, error);
+        if(error){
+            alert(error.message);
+        }
+        if(res){
+            alert('Signup Successfull');
+        }
     };
 
 
