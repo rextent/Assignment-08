@@ -6,10 +6,7 @@ import Image from 'next/image';
 import React from 'react';
 import { UpdateUserModal } from '../components/UpdateUserModal';
 
-export const metadata = {
-  title: "My Profile | SkillSphere",
-  description: "Welcome to your Profile Page",
-};
+
 
 const MyProfilePage = () => {
   const { data: session, isPending } = authClient.useSession();
