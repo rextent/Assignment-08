@@ -7,7 +7,6 @@ import React from 'react';
 import { UpdateUserModal } from '../components/UpdateUserModal';
 
 
-
 const MyProfilePage = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
