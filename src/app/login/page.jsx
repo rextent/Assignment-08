@@ -55,7 +55,7 @@ const LoginPage = () => {
 
     return (
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-white to-purple-50 px-4">
-            <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
+            <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg animate__animated animate__fadeInUp">
 
                 <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
                     Login to Your Account

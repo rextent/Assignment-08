@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ToastContainer } from 'react-toastify';
+import 'animate.css';
 
 const OutfitFont = Outfit({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
+      data-theme='light'
       lang="en"
       className={`${OutfitFont.className} h-full antialiased`}
     >

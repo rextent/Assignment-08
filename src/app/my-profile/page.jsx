@@ -33,7 +33,7 @@ const MyProfilePage = () => {
     <section className="min-h-screen bg-gradient-to-r from-blue-50 via-white to-purple-50 px-4 py-10">
       <div className="max-w-md mx-auto">
 
-        <Card className="p-6 shadow-lg rounded-xl">
+        <Card className="p-6 shadow-lg rounded-xl animate__animated animate__fadeInUp">
 
           {/* Avatar */}
           <div className="flex flex-col items-center gap-3">
