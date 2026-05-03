@@ -1,42 +1,56 @@
 'use client'
 
-
 import { authClient } from '@/lib/auth-client';
-import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
+
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleLogin = async (data) => {
-        console.log(data);
+        const callbackUrl = searchParams.get("callbackUrl") || "/";
+
         const { data: res, error } = await authClient.signIn.email({
             email: data.email, // required
             password: data.password, // required
             rememberMe: true,
-            callbackURL: "/",
+            redirect: false,
         });
         if (error) {
-            console.log("Login error:", error);
-            alert("Login failed");
+            // console.log("Login error:", error);
+            toast.error("❌ Login failed");
             return;
         }
+        toast.success("✅ Login successful");
 
-        console.log("Login success:", res);
+        router.push(callbackUrl);
+
+        // console.log("Login success:", res);
 
         // 🔥 IMPORTANT: force reload / redirect
         // window.location.href = "/";
-        window.location.href = '/';
+        // window.location.href = '/';
 
     };
     const handleGoogleLogin = async () => {
-        const data = await authClient.signIn.social({
-            provider: "google",
-        });
-        console.log(data);
+        try {
+            await authClient.signIn.social({
+                provider: "google",
+            });
+
+            toast.success("Redirecting to Google...");
+        } catch (err) {
+            toast.error("Google login failed");
+        }
+
+
+        // console.log(data);
     }
 
     return (

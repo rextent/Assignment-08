@@ -6,6 +6,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { useRouter } from "next/navigation";
+import { toast } from 'react-toastify';
 
 const RegisterPage = () => {
     const router = useRouter();
@@ -25,11 +26,11 @@ const RegisterPage = () => {
         });
         console.log(data, error);
         if (error) {
-            alert(error.message);
+            toast.error(error.message || "Signup failed");
             return;
         }
         if (res) {
-            alert('Signup Successfull');
+            toast.success("Signup successful");
             router.push("/login");
         }
     };
@@ -37,7 +38,7 @@ const RegisterPage = () => {
         const data = await authClient.signIn.social({
             provider: "google",
         });
-        console.log(data);
+        // console.log(data);
     }
 
 
