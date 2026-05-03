@@ -19,6 +19,17 @@ const LoginPage = () => {
             rememberMe: true,
             callbackURL: "/",
         });
+        if (error) {
+            console.log("Login error:", error);
+            alert("Login failed");
+            return;
+        }
+
+        console.log("Login success:", res);
+
+        // 🔥 IMPORTANT: force reload / redirect
+        // window.location.href = "/";
+        window.location.href ='/';
 
     };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,11 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+
+  const { data: session } = authClient.useSession()
+  const user = session?.user;
+  console.log(user);
+
   const [open, setOpen] = useState(false);
 
   const handleClose = () => setOpen(false);
@@ -45,18 +51,50 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Buttons */}
-        <div className="hidden md:flex items-center gap-3">
-          <Link href="/login">
-            <Button className="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200">
-              Login
-            </Button>
-          </Link>
+        <div className="hidden md:flex items-center gap-4">
 
-          <Link href="/register">
-            <Button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">
-              Register
-            </Button>
-          </Link>
+          {user ? (
+            <div className="flex items-center gap-3">
+
+              {/* Name */}
+              <span className="text-gray-700 font-medium">
+                {user.name}
+              </span>
+
+              {/* Profile Image */}
+              <Image
+                src={user.image || "/default-user.png"}
+                alt="user"
+                width={40}
+                height={40}
+                className="rounded-full object-cover border"
+              />
+
+              {/* Logout */}
+              <Button
+                onClick={() => authClient.signOut()}
+                className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+              >
+                Logout
+              </Button>
+
+            </div>
+          ) : (
+            <>
+              <Link href="/login">
+                <Button className="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200">
+                  Login
+                </Button>
+              </Link>
+
+              <Link href="/register">
+                <Button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">
+                  Register
+                </Button>
+              </Link>
+            </>
+          )}
+
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -92,17 +130,46 @@ const Navbar = () => {
           </ul>
 
           <div className="flex flex-col gap-3 pt-2">
-            <Link href="/login" onClick={handleClose}>
-              <Button className="w-full bg-gray-100 text-gray-800 py-2 rounded-lg">
-                Login
-              </Button>
-            </Link>
 
-            <Link href="/register" onClick={handleClose}>
-              <Button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
-                Register
-              </Button>
-            </Link>
+            {user ? (
+              <>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={user.image || "/default-user.png"}
+                    alt="user"
+                    width={35}
+                    height={35}
+                    className="rounded-full"
+                  />
+                  <span className="font-medium">{user.name}</span>
+                </div>
+
+                <Button
+                  onClick={() => {
+                    authClient.signOut();
+                    handleClose();
+                  }}
+                  className="w-full bg-red-500 text-white py-2 rounded-lg"
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link href="/login" onClick={handleClose}>
+                  <Button className="w-full bg-gray-100 text-gray-800 py-2 rounded-lg">
+                    Login
+                  </Button>
+                </Link>
+
+                <Link href="/register" onClick={handleClose}>
+                  <Button className="w-full bg-blue-600 text-white py-2 rounded-lg">
+                    Register
+                  </Button>
+                </Link>
+              </>
+            )}
+
           </div>
 
         </div>

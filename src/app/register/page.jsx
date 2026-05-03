@@ -5,13 +5,16 @@ import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { useRouter } from "next/navigation";
 
 const RegisterPage = () => {
+    const router = useRouter();
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleRegister = async (data) => {
         const { name, email, photo, password } = data;
+        
 
         const {data: res, error } = await authClient.signUp.email({
             name: name, // required
@@ -23,9 +26,11 @@ const RegisterPage = () => {
         console.log(data, error);
         if(error){
             alert(error.message);
+            return;
         }
         if(res){
             alert('Signup Successfull');
+            router.push("/login");
         }
     };
 
