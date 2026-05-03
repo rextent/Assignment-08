@@ -3,7 +3,6 @@
 import { authClient } from '@/lib/auth-client';
 import { PersonPencil } from '@gravity-ui/icons';
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
-import { BiUserCircle } from "react-icons/bi";
 
 export function UpdateUserModal() {
 
