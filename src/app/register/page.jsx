@@ -14,9 +14,9 @@ const RegisterPage = () => {
 
     const handleRegister = async (data) => {
         const { name, email, photo, password } = data;
-        
 
-        const {data: res, error } = await authClient.signUp.email({
+
+        const { data: res, error } = await authClient.signUp.email({
             name: name, // required
             email: email, // required
             password: password, // required
@@ -24,15 +24,21 @@ const RegisterPage = () => {
             callbackURL: "/",
         });
         console.log(data, error);
-        if(error){
+        if (error) {
             alert(error.message);
             return;
         }
-        if(res){
+        if (res) {
             alert('Signup Successfull');
             router.push("/login");
         }
     };
+    const handleGoogleLogin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+        console.log(data);
+    }
 
 
     return (
@@ -73,7 +79,11 @@ const RegisterPage = () => {
                             type="text"
                             placeholder="Enter your Photo URL"
                             className="w-full outline-none text-sm"
-                            {...register("photo", { required: "Photo URL Can't empty" })}
+                            {...register("photo", {
+                                required: "Photo URL Can't empty",
+                                validate: (value) =>
+                                    value.startsWith("http") || "Must be a valid URL",
+                            })}
                         />
 
                     </div>
@@ -100,6 +110,17 @@ const RegisterPage = () => {
                     </button>
 
                 </form>
+                {/* Google Login Button */}
+                <button onClick={handleGoogleLogin}
+                    type="button"
+                    className="w-full flex items-center justify-center gap-2 border py-2 rounded-md text-sm hover:bg-gray-50 mt-5"
+                >
+                    <img
+                        src="https://www.svgrepo.com/show/475656/google-color.svg"
+                        className="w-5 h-5"
+                    />
+                    Continue with Google
+                </button>
 
                 {/* Extra */}
                 <p className="text-center text-sm text-gray-600 mt-4">

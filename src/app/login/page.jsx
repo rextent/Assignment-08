@@ -29,9 +29,15 @@ const LoginPage = () => {
 
         // 🔥 IMPORTANT: force reload / redirect
         // window.location.href = "/";
-        window.location.href ='/';
+        window.location.href = '/';
 
     };
+    const handleGoogleLogin = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+        console.log(data);
+    }
 
     return (
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 via-white to-purple-50 px-4">
@@ -76,6 +82,18 @@ const LoginPage = () => {
                     </button>
 
                 </form>
+
+                {/* Google Login Button */}
+                <button onClick={handleGoogleLogin}
+                    type="button"
+                    className="w-full flex items-center justify-center gap-2 border py-2 rounded-md text-sm hover:bg-gray-50 mt-5"
+                >
+                    <img
+                        src="https://www.svgrepo.com/show/475656/google-color.svg"
+                        className="w-5 h-5"
+                    />
+                    Continue with Google
+                </button>
 
                 {/* Extra */}
                 <p className="text-center text-sm text-gray-600 mt-4">

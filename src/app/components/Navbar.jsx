@@ -9,13 +9,22 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
 
-  const { data: session } = authClient.useSession()
+  const { data: session, isPending } = authClient.useSession()
   const user = session?.user;
-  console.log(user);
+  console.log(user, isPending);
 
   const [open, setOpen] = useState(false);
 
   const handleClose = () => setOpen(false);
+
+  const getSafeImage = (url) => {
+    try {
+      new URL(url);
+      return url;
+    } catch {
+      return "/default-user.png";
+    }
+  };
 
   return (
     <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
@@ -53,7 +62,7 @@ const Navbar = () => {
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-4">
 
-          {user ? (
+          {isPending ? ("Loading...") : user ? (
             <div className="flex items-center gap-3">
 
               {/* Name */}
@@ -63,11 +72,10 @@ const Navbar = () => {
 
               {/* Profile Image */}
               <Image
-                src={user.image || "/default-user.png"}
-                alt="user"
+                src={getSafeImage(user?.image)}
                 width={40}
                 height={40}
-                className="rounded-full object-cover border"
+                alt="user"
               />
 
               {/* Logout */}
