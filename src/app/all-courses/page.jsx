@@ -1,5 +1,10 @@
 import AllCoursesClient from "../components/AllCoursesClient";
 
+export const metadata = {
+  title: "All Courses | SkillSphere",
+  description: "Browse all courses and improve your skills",
+};
+
 const AllCoursesPage = async () => {
   const res = await fetch('https://assignment-08-lilac.vercel.app/data.JSON');
   const courses = await res.json();

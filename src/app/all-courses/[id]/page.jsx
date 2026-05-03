@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { FaStar, FaClock, FaLayerGroup, FaUser } from "react-icons/fa";
 
+export const metadata = {
+  title: "Course Details | SkillSphere",
+  description: "Read The Course Details",
+};
+
 const CourseDetailsPage = async ({ params }) => {
     const { id } = await params;
 

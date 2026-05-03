@@ -6,6 +6,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
+export const metadata = {
+  title: "Login | SkillSphere",
+  description: "BLogin to your Account",
+};
+
 const LoginPage = () => {
 
     const router = useRouter();
